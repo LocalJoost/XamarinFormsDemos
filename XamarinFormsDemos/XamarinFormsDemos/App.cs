@@ -10,7 +10,6 @@ namespace XamarinFormsDemos
     public App()
     {
       InitializeComponent();
-  //   var a = new AnimateSlideIn
 
       if (Current.Resources == null)
       {
