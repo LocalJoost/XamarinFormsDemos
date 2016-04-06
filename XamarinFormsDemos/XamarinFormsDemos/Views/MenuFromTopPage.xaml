@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<demoViewFramework:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demoViewFramework="clr-namespace:DemoViewFramework;assembly=DemoViewFramework"
+             xmlns:behaviors="clr-namespace:Wortell.XamarinForms.Behaviors;assembly=Wortell.XamarinForms"
+             x:Class="XamarinFormsDemos.Views.MenuFromTopPage" Style="{StaticResource PageStyle}">
+  <Grid>
+    <!-- Page content -->
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25*"></RowDefinition>
+      <RowDefinition Height="75*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid Row="0" Style="{StaticResource HeaderOutsideStyle}">
+      <StackLayout Style="{StaticResource ContentStyle}"  Orientation="Vertical" VerticalOptions="Start">
+        <Image Source="chevrondown.png" HeightRequest="40" VerticalOptions="Start" HorizontalOptions="Start">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ToggleMenuCommand}" ></TapGestureRecognizer>
+          </Image.GestureRecognizers>
+        </Image>
+        <Label Text="Menu from top" Style="{StaticResource HeaderStyle}"  VerticalOptions="Start"/>
+      </StackLayout>
+    </Grid>
+    <ContentView Grid.Row="1" Style="{StaticResource ContentStyle}" HorizontalOptions="Fill">
+      <Label Text="Here be page content" Style="{StaticResource ContentTextStyle}"></Label>
+    </ContentView>
+
+    <!-- Menu -->
+    <ContentView Grid.Row="0" Grid.RowSpan="2">
+      <ContentView.Behaviors>
+        <behaviors:AnimateSlideDownBehavior
+          IsVisible="{Binding IsMenuVisible}"
+          ViewIsInitialized="{Binding ViewIsInitialized}"
+          FoldOutTime="400" FoldInTime="300"/>
+      </ContentView.Behaviors>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="75*"></RowDefinition>
+          <RowDefinition Height="25*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ContentView Style="{StaticResource MenuStyle}">
+          <StackLayout Style="{StaticResource ContentStyle}"  Orientation="Vertical" VerticalOptions="Start">
+            <Image Source="chevronup.png" HeightRequest="40" VerticalOptions="Start" HorizontalOptions="Start">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ToggleMenuCommand}" ></TapGestureRecognizer>
+              </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Menu" Style="{StaticResource HeaderStyle}"  VerticalOptions="Start"/>
+            <Label Text="Here be menu content" Style="{StaticResource MenuTextStyle}"></Label>
+          </StackLayout>
+        </ContentView>
+
+        <!-- Leftover space -->
+        <ContentView Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="Fill">
+          <ContentView.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ToggleMenuCommand}"></TapGestureRecognizer>
+          </ContentView.GestureRecognizers>
+        </ContentView>
+      </Grid>
+    </ContentView>
+
+  </Grid>
+</demoViewFramework:BaseContentPage>

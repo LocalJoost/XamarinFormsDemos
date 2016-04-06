@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<demoViewFramework:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:demoViewFramework="clr-namespace:DemoViewFramework;assembly=DemoViewFramework"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsDemos.Views.AnimationBehaviorsPage" Style="{StaticResource PageStyle}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25*"></RowDefinition>
+      <RowDefinition Height="75*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid Row="0" Style="{StaticResource HeaderOutsideStyle}">
+      <ContentView Style="{StaticResource ContentStyle}">
+        <Label Text="Animation Behaviors" Style="{StaticResource HeaderStyle}"  VerticalOptions="CenterAndExpand"></Label>
+      </ContentView>
+    </Grid>
+    <ScrollView Grid.Row="1" Style="{StaticResource ContentStyle}" VerticalOptions="Fill" HorizontalOptions="Fill">
+      <StackLayout Orientation="Vertical" VerticalOptions="Start">
+        <Button Text="Menu from top" Command="{Binding MenuFromTopCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
+        <Button Text="Slide-in menu" Command="{Binding MenuSlideInCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
+      </StackLayout>
+    </ScrollView>
+
+  </Grid>
+  </demoViewFramework:BaseContentPage>
