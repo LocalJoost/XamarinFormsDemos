@@ -10,7 +10,6 @@ namespace DemoViewFramework
     }
 
     private bool _viewIsInitialized;
-
     public bool ViewIsInitialized
     {
       get { return _viewIsInitialized; }

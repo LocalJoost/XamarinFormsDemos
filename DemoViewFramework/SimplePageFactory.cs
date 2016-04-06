@@ -5,7 +5,8 @@ namespace DemoViewFramework
 {
   public class SimplePageFactory : ISimplePageFactory
   {
-    private static readonly Dictionary<Type, Type> ViewMap = new Dictionary<Type, Type>();
+    private static readonly Dictionary<Type, Type> ViewMap = 
+      new Dictionary<Type, Type>();
 
     public void RegisterPageViewModel<TViewModel, TView>()
         where TView : BaseContentPage
@@ -22,7 +23,6 @@ namespace DemoViewFramework
       page.BindingContext = viewModel;
 
       return page;
-
     }
   }
 }

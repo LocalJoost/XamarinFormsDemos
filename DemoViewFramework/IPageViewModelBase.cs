@@ -9,6 +9,5 @@
     void OnViewDisappearing();
 
     INavigationService NavigationService { get; set; }
-
   }
 }
