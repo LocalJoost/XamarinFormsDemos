@@ -13,8 +13,8 @@
         <Label Text="Xamarin Forms Demos" Style="{StaticResource HeaderStyle}"  VerticalOptions="CenterAndExpand"></Label>
       </ContentView>
     </Grid>
-    <ScrollView Grid.Row="1" Style="{StaticResource ContentStyle}" VerticalOptions="Fill" HorizontalOptions="Fill">
-      <StackLayout Orientation="Vertical" VerticalOptions="Start">
+    <ScrollView Grid.Row="1"  VerticalOptions="Fill" HorizontalOptions="Fill">
+      <StackLayout Orientation="Vertical" VerticalOptions="Start" Style="{StaticResource ContentStyle}">
         <Button Text="Animation behaviors" Command="{Binding AnimationBehaviorsCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
       </StackLayout>
     </ScrollView>
