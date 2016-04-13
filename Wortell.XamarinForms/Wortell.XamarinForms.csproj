@@ -40,6 +40,7 @@
     <Compile Include="Behaviors\AnimateSlideInBehavior.cs" />
     <Compile Include="Behaviors\Base\BindableBehaviorBase.cs" />
     <Compile Include="Behaviors\Base\ViewInitializedBehaviorBase.cs" />
+    <Compile Include="Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
