@@ -1,6 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using Wortell.XamarinForms.Behaviors.Base;
+using Xamarin.Forms;
 
-namespace Wortell.XamarinForms.Behaviors.Base
+namespace Wortell.XamarinForms.Behaviors
 {
   public class AnimateScaleBehavior : AnimateFoldBehaviorBase
   {

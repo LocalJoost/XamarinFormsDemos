@@ -2,6 +2,7 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:base="clr-namespace:Wortell.XamarinForms.Behaviors.Base;assembly=Wortell.XamarinForms"
+             xmlns:behaviors="clr-namespace:Wortell.XamarinForms.Behaviors;assembly=Wortell.XamarinForms"
              x:Class="XamarinFormsDemos.Views.Controls.PopupControl"
               IsVisible="{Binding IsVisible, Source={x:Reference AnimatedGrid}}">
   <ContentView BackgroundColor="{StaticResource SeeThrough}"
@@ -9,7 +10,7 @@
 
     <ContentView Padding="20,0,20,0" x:Name="AnimatedGrid" IsVisible="False">
       <ContentView.Behaviors>
-        <base:AnimateScaleBehavior IsVisible="{Binding IsMenuVisible}" ViewIsInitialized="{Binding ViewIsInitialized}"/>
+        <behaviors:AnimateScaleBehavior IsVisible="{Binding IsMenuVisible}" ViewIsInitialized="{Binding ViewIsInitialized}"/>
       </ContentView.Behaviors>
       <ContentView Style="{StaticResource MenuStyle}" HorizontalOptions="Fill"
                     VerticalOptions="CenterAndExpand" Padding="0,0,0,10">
