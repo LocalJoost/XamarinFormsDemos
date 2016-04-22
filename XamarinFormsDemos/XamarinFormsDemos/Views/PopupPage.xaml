@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<demoViewFramework:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demoViewFramework="clr-namespace:DemoViewFramework;assembly=DemoViewFramework"
+             xmlns:controls="clr-namespace:XamarinFormsDemos.Views.Controls;assembly=XamarinFormsDemos"
+             x:Class="XamarinFormsDemos.Views.PopupPage" Style="{StaticResource PageStyle}">
+  <Grid>
+    <!-- Page content -->
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25*"></RowDefinition>
+      <RowDefinition Height="75*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid Row="0" Style="{StaticResource HeaderOutsideStyle}">
+      <ContentView Style="{StaticResource ContentStyle}">
+        <Label Text="Popup menu" Style="{StaticResource HeaderStyle}"  VerticalOptions="CenterAndExpand"></Label>
+      </ContentView>
+    </Grid>
+
+    <ContentView Grid.Row="1" Style="{StaticResource ContentStyle}" HorizontalOptions="Fill">
+      <Label Text="Here be page content" Style="{StaticResource ContentTextStyle}"></Label>
+
+      <ContentView  VerticalOptions="Start" Style="{StaticResource ContentStyle}" >
+          <Button Text="Open popup menu" Command="{Binding ToggleMenuCommand}" 
+                  HorizontalOptions="Fill" VerticalOptions="Start"></Button>
+      </ContentView>
+    </ContentView>
+
+    <!-- Menu -->
+    <controls:PopupControl Grid.Row="0" Grid.RowSpan="2"></controls:PopupControl>
+
+  </Grid>
+</demoViewFramework:BaseContentPage>

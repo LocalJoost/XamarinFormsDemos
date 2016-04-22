@@ -39,11 +39,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AnimationBehaviorsViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PopupViewModel.cs" />
     <Compile Include="ViewModels\MenuSlideInViewModel.cs" />
     <Compile Include="ViewModels\MenuFromTopViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModelBase.cs" />
     <Compile Include="Views\AnimationBehaviorsPage.xaml.cs">
       <DependentUpon>AnimationBehaviorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\PopupControl.xaml.cs">
+      <DependentUpon>PopupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupPage.xaml.cs">
+      <DependentUpon>PopupPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuSlideInPage.xaml.cs">
       <DependentUpon>MenuSlideInPage.xaml</DependentUpon>
@@ -120,6 +127,19 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AnimationBehaviorsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Controls\PopupControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -21,6 +21,7 @@ namespace XamarinFormsDemos
       pageFactory.RegisterPageViewModel<AnimationBehaviorsViewModel, AnimationBehaviorsPage>();
       pageFactory.RegisterPageViewModel<MenuFromTopViewModel, MenuFromTopPage>();
       pageFactory.RegisterPageViewModel<MenuSlideInViewModel, MenuSlideInPage>();
+      pageFactory.RegisterPageViewModel<PopupViewModel, PopupPage>();
 
       var mainNavigationPage = new NavigationPage();
       MainPage = mainNavigationPage;

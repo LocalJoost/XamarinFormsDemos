@@ -7,8 +7,10 @@
 
       <Color x:Key="AccentColor">#FF5BAF40</Color>
       
+      <Color x:Key="ContrastColor">White</Color>
+      
       <Style TargetType="ContentPage" x:Key="PageStyle">
-        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ContrastColor}" />
       </Style>
 
       <Style TargetType="View" x:Key="HeaderOutsideStyle">
@@ -17,7 +19,7 @@
 
       <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
-        <Setter Property="TextColor" Value="White"></Setter>
+        <Setter Property="TextColor" Value="{StaticResource ContrastColor}"></Setter>
       </Style>
 
       <Style TargetType="Layout" x:Key="ContentStyle">
@@ -25,7 +27,7 @@
       </Style>
       
       <Style TargetType="Label" x:Key="HeaderStyle">
-        <Setter Property="TextColor" Value="White" />
+        <Setter Property="TextColor" Value="{StaticResource ContrastColor}" />
         <Setter Property="FontSize" Value="30" />
       </Style>
 
@@ -39,9 +41,28 @@
       </Style>
 
       <Style TargetType="Label" x:Key="MenuTextStyle">
-        <Setter Property="TextColor" Value="White" />
+        <Setter Property="TextColor" Value="{StaticResource ContrastColor}" />
         <Setter Property="FontSize" Value="15" />
       </Style>
+
+      <Style TargetType="Layout" x:Key="PopupHeaderStyle" BasedOn="{StaticResource ContentStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource ContrastColor}" />
+      </Style>
+
+      <Style TargetType="Label" x:Key="PopupHeaderTextStyle" BasedOn="{StaticResource HeaderStyle}">
+        <Setter Property="TextColor" Value="{StaticResource AccentColor}" />
+      </Style>
+
+      <Style TargetType="ContentView" x:Key="Separator">
+        <Setter Property="HeightRequest" Value="1"></Setter>
+        <Setter Property="VerticalOptions" Value="Center"></Setter>
+        <Setter Property="HorizontalOptions" Value="Fill"></Setter>
+        <Setter Property="BackgroundColor" Value="{StaticResource ContrastColor}"></Setter>
+      </Style>
+      
+      
+
+      <Color x:Key="SeeThrough">#B2000000</Color>
       
     </ResourceDictionary>
   </Application.Resources>

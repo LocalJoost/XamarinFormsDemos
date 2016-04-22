@@ -38,6 +38,7 @@
     <Compile Include="Behaviors\Base\AnimateFoldBehaviorBase.cs" />
     <Compile Include="Behaviors\AnimateSlideDownBehavior.cs" />
     <Compile Include="Behaviors\AnimateSlideInBehavior.cs" />
+    <Compile Include="Behaviors\Base\AnimateScaleBehavior.cs" />
     <Compile Include="Behaviors\Base\BindableBehaviorBase.cs" />
     <Compile Include="Behaviors\Base\ViewInitializedBehaviorBase.cs" />
     <Compile Include="Initializer.cs" />

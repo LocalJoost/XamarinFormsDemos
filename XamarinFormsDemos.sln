@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinFormsDemos.Droid", "XamarinFormsDemos\XamarinFormsDemos.Droid\XamarinFormsDemos.Droid.csproj", "{0CA95246-60DF-402C-8C08-1DC1F5306F55}"
 EndProject
@@ -80,6 +80,7 @@ Global
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.AppStore|x86.Build.0 = Release|Any CPU
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.AppStore|x86.Deploy.0 = Release|Any CPU
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.Debug|ARM.Build.0 = Debug|Any CPU
 		{0CA95246-60DF-402C-8C08-1DC1F5306F55}.Debug|ARM.Deploy.0 = Debug|Any CPU

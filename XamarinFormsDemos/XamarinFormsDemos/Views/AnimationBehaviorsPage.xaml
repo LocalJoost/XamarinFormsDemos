@@ -17,6 +17,7 @@
       <StackLayout Orientation="Vertical" VerticalOptions="Start" Style="{StaticResource ContentStyle}" >
         <Button Text="Menu from top" Command="{Binding MenuFromTopCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
         <Button Text="Slide-in menu" Command="{Binding MenuSlideInCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
+        <Button Text="Popup menu" Command="{Binding PopupCommand}" HorizontalOptions="Fill" VerticalOptions="Start"></Button>
       </StackLayout>
     </ScrollView>
 
