@@ -2,15 +2,17 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:base="clr-namespace:Wortell.XamarinForms.Behaviors.Base;assembly=Wortell.XamarinForms"
-             x:Class="XamarinFormsDemos.Views.Controls.PopupControl">
+             x:Class="XamarinFormsDemos.Views.Controls.PopupControl"
+              IsVisible="{Binding IsVisible, Source={x:Reference AnimatedGrid}}">
   <ContentView BackgroundColor="{StaticResource SeeThrough}"
-               HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsVisible, Source={x:Reference AnimatedGrid}}">
+               HorizontalOptions="Fill" VerticalOptions="Fill" >
 
-    <ContentView Padding="20,0,20,0" x:Name="AnimatedGrid">
+    <ContentView Padding="20,0,20,0" x:Name="AnimatedGrid" IsVisible="False">
       <ContentView.Behaviors>
         <base:AnimateScaleBehavior IsVisible="{Binding IsMenuVisible}" ViewIsInitialized="{Binding ViewIsInitialized}"/>
       </ContentView.Behaviors>
-      <ContentView Style="{StaticResource MenuStyle}" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Padding="0,0,0,10">
+      <ContentView Style="{StaticResource MenuStyle}" HorizontalOptions="Fill"
+                    VerticalOptions="CenterAndExpand" Padding="0,0,0,10">
         <Grid>
           <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -22,30 +24,30 @@
           </ContentView>
 
           <StackLayout Orientation="Vertical" Grid.Row="1">
-            
+
             <StackLayout Style="{StaticResource ContentStyle}"  Orientation="Vertical">
-              <Label Style="{StaticResource MenuTextStyle}" Text="Here be text" VerticalOptions="Center"/>
+              <Label Style="{StaticResource MenuTextStyle}" Text="Here be text" />
               <Label Style="{StaticResource MenuTextStyle}" Text="Here be more text" VerticalOptions="Center"/>
             </StackLayout>
-            
+
             <ContentView Style="{StaticResource Separator}"></ContentView>
-            
+
             <StackLayout Style="{StaticResource ContentStyle}"  Orientation="Vertical">
-              <Label Style="{StaticResource MenuTextStyle}" Text="Here be text" VerticalOptions="Center"/>
-              <Label Style="{StaticResource MenuTextStyle}" Text="Here be more text" VerticalOptions="Center"/>
-              <Label Style="{StaticResource MenuTextStyle}" Text="Here be more whatever UI elements you want" VerticalOptions="Center"/>
+              <Label Style="{StaticResource MenuTextStyle}" Text="Here be text" />
+              <Label Style="{StaticResource MenuTextStyle}" Text="Here be more text" />
+              <Label Style="{StaticResource MenuTextStyle}" Text="Here be more whatever UI elements you want" />
             </StackLayout>
-            
+
             <Grid HeightRequest="10"></Grid>
-            
+
             <Grid Style="{StaticResource ContentStyle}">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="10"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
               </Grid.ColumnDefinitions>
-              <Button Text="Ok" Command="{Binding ToggleMenuCommand}"></Button>
-              <Button Text="Cancel" Grid.Column="2" Command="{Binding ToggleMenuCommand}"></Button>
+              <Button Text="Ok" Command="{Binding CloseMenuCommand}"></Button>
+              <Button Text="Cancel" Grid.Column="2" Command="{Binding CloseMenuCommand}"></Button>
             </Grid>
           </StackLayout>
         </Grid>
@@ -53,7 +55,7 @@
     </ContentView>
 
     <ContentView.GestureRecognizers>
-      <TapGestureRecognizer Command="{Binding ToggleMenuCommand}"></TapGestureRecognizer>
+      <TapGestureRecognizer Command="{Binding CloseMenuCommand}"></TapGestureRecognizer>
     </ContentView.GestureRecognizers>
   </ContentView>
 
