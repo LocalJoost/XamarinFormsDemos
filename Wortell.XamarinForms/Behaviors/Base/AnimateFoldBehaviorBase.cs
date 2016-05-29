@@ -7,21 +7,6 @@ namespace Wortell.XamarinForms.Behaviors.Base
     protected double FoldInPosition;
     protected double FoldOutPosition;
 
-    protected VisualElement GetParentView()
-    {
-      var parent = AssociatedObject as Element;
-      VisualElement parentView = null;
-      if (parent != null)
-      {
-        do
-        {
-          parent = parent.Parent;
-          parentView = parent as VisualElement;
-        } while (parentView?.Width <= 0 && parent.Parent != null);
-      }
-
-      return parentView;
-    }
 
     protected override void OnAttachedTo(View bindable)
     {

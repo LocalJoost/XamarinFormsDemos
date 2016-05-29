@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<demoViewFramework:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demoViewFramework="clr-namespace:DemoViewFramework;assembly=DemoViewFramework"
+             xmlns:extensions="clr-namespace:Wortell.XamarinForms.Extensions;assembly=Wortell.XamarinForms"
+             xmlns:behaviors="clr-namespace:Wortell.XamarinForms.Behaviors;assembly=Wortell.XamarinForms"
+             xmlns:controls="clr-namespace:XamarinFormsDemos.Views.Controls;assembly=XamarinFormsDemos"
+             x:Class="XamarinFormsDemos.Views.FloatingPopupPage" Style="{StaticResource PageStyle}">
+  <demoViewFramework:BaseContentPage.Resources>
+    <ResourceDictionary>
+      
+    </ResourceDictionary>
+
+  </demoViewFramework:BaseContentPage.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25*"></RowDefinition>
+      <RowDefinition Height="75*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid Row="0" Style="{StaticResource HeaderOutsideStyle}">
+      <ContentView Style="{StaticResource ContentStyle}">
+        <Label Text="Xamarin Forms Demos" Style="{StaticResource HeaderStyle}"  VerticalOptions="CenterAndExpand"></Label>
+      </ContentView>
+    </Grid>
+    <ScrollView Grid.Row="1"  VerticalOptions="Fill" HorizontalOptions="Fill" Margin="10,0,10,0" >
+      <Grid>
+        <Grid VerticalOptions="Start">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+          </Grid.RowDefinitions>
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+            <ContentView  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+              <Entry  x:Name="NameEntry" Placeholder="Name" TextColor="{StaticResource AccentColor}" PlaceholderColor="{StaticResource SoftAccentColor}" />
+            </ContentView>
+            <ContentView>
+              <Image Source="{extensions:ImageResource info.png}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="{Binding Height, Source={x:Reference NameEntry}}">
+                <Image.Behaviors>
+                  <behaviors:FloatingPopupBehavior MessageText="Fill in your name here" PopupControl="{x:Reference PopupControl}" Dx="-3" Dy="4"/>
+                </Image.Behaviors>
+              </Image>
+            </ContentView>
+          </StackLayout>
+
+          <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Fill" >
+            <ContentView  HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+              <Entry x:Name="AddressEntry" Placeholder="Adress" TextColor="{StaticResource AccentColor}" PlaceholderColor="{StaticResource SoftAccentColor}" />
+            </ContentView>
+            <ContentView>
+              <Image Source="{extensions:ImageResource info.png}" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="{Binding Height, Source={x:Reference AddressEntry}}">
+                <Image.Behaviors>
+                  <behaviors:FloatingPopupBehavior MessageText="Fill in your adress here" PopupControl="{x:Reference PopupControl }" Dx="-3" Dy="4"/>
+                </Image.Behaviors>
+              </Image>
+            </ContentView>
+          </StackLayout>
+
+        </Grid>
+        <controls:FloatingPopupControl x:Name="PopupControl" VerticalOptions="Fill" HorizontalOptions="Fill" />
+
+      </Grid>
+    </ScrollView>
+  </Grid>
+</demoViewFramework:BaseContentPage>

@@ -6,6 +6,7 @@
     <ResourceDictionary>
 
       <Color x:Key="AccentColor">#FF5BAF40</Color>
+      <Color x:Key="SoftAccentColor">#555BAF40</Color>
       
       <Color x:Key="ContrastColor">White</Color>
       

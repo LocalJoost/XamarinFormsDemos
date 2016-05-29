@@ -1,4 +1,6 @@
-﻿using DemoViewFramework;
+﻿using System.Reflection;
+using DemoViewFramework;
+using Wortell.XamarinForms.Extensions;
 using Xamarin.Forms;
 using XamarinFormsDemos.ViewModels;
 using XamarinFormsDemos.Views;
@@ -10,6 +12,8 @@ namespace XamarinFormsDemos
     public App()
     {
       InitializeComponent();
+      ImageResourceExtension.ResourcePrefix = "XamarinFormsDemos.Assets.Images";
+      ImageResourceExtension.Assembly = this.GetType().GetTypeInfo().Assembly;
 
       if (Current.Resources == null)
       {
@@ -22,6 +26,7 @@ namespace XamarinFormsDemos
       pageFactory.RegisterPageViewModel<MenuFromTopViewModel, MenuFromTopPage>();
       pageFactory.RegisterPageViewModel<MenuSlideInViewModel, MenuSlideInPage>();
       pageFactory.RegisterPageViewModel<PopupViewModel, PopupPage>();
+      pageFactory.RegisterPageViewModel<FloatingPopupViewModel, FloatingPopupPage>();
 
       var mainNavigationPage = new NavigationPage();
       MainPage = mainNavigationPage;

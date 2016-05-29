@@ -1,4 +1,5 @@
 ﻿using Wortell.XamarinForms.Behaviors.Base;
+using Wortell.XamarinForms.Extensions;
 using Xamarin.Forms;
 
 namespace Wortell.XamarinForms.Behaviors
@@ -9,7 +10,7 @@ namespace Wortell.XamarinForms.Behaviors
     {
       if (newValue)
       {
-        var parentView = GetParentView();
+        var parentView = AssociatedObject.GetParentView();
         if (parentView != null)
         {
           FoldInPosition = -parentView.Width;
