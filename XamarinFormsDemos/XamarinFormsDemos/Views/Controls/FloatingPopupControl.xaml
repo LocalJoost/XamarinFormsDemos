@@ -5,10 +5,15 @@
     <ColumnDefinition Width="75*"></ColumnDefinition>
     <ColumnDefinition Width="25*"></ColumnDefinition>
   </Grid.ColumnDefinitions>
-  <Grid x:Name="MessageGrid" HorizontalOptions="Start" VerticalOptions="Start" Opacity="1">
-    <Grid BackgroundColor="{StaticResource  AccentColor}" HeightRequest="15" WidthRequest="15" HorizontalOptions="End" VerticalOptions="Start" Rotation="45" Margin="0,0,4,0" ></Grid>
-    <Grid Padding="10,10,10,10" BackgroundColor="{StaticResource AccentColor}" Margin="0,7,0,0" HorizontalOptions="FillAndExpand">
-      <Label Text ="This is a text" x:Name="InfoText" TextColor="{StaticResource ContrastColor}" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+  <Grid x:Name="MessageGrid" HorizontalOptions="Start" VerticalOptions="Start" >
+    <Grid BackgroundColor="{StaticResource  AccentColor}" HeightRequest="15" WidthRequest="15" 
+          HorizontalOptions="End" VerticalOptions="Start" Rotation="45" 
+          Margin="0,0,4,0" InputTransparent="True"/>
+    <Grid Padding="10,10,10,10" BackgroundColor="{StaticResource AccentColor}" Margin="0,7,0,0" 
+          HorizontalOptions="FillAndExpand" InputTransparent="True">
+      <Label Text ="This is a text" x:Name="InfoText" TextColor="{StaticResource ContrastColor}" 
+             HorizontalOptions="Center" VerticalOptions="Center" 
+             InputTransparent="True"/> 
     </Grid>
   </Grid>
 </Grid>

@@ -41,6 +41,7 @@
     <Compile Include="Behaviors\AnimateScaleBehavior.cs" />
     <Compile Include="Behaviors\Base\BindableBehaviorBase.cs" />
     <Compile Include="Behaviors\Base\ViewInitializedBehaviorBase.cs" />
+    <Compile Include="Behaviors\FloatingPopupDisplayStrategy.cs" />
     <Compile Include="Behaviors\FloatingPopupBehavior.cs" />
     <Compile Include="Controls\IFloatingPopup.cs" />
     <Compile Include="Extensions\ElementExtensions.cs" />
