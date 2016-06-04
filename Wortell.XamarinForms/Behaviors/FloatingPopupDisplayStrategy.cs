@@ -27,7 +27,11 @@ namespace Wortell.XamarinForms.Behaviors
       _overallView.IsVisible = true;
 
       // IOS apparently needs to have some time to layout the grid first
-      if (Device.OS == TargetPlatform.iOS) await Task.Delay(25);
+      // Windows needs the size of the message to update first
+      if (Device.OS == TargetPlatform.iOS || 
+          Device.OS == TargetPlatform.Windows) await Task.Delay(25);
+      _messageView.Scale = 0;
+
       var gridLocation = _messageView.GetAbsoluteLocation();
       var parentLocation = parentElement.GetAbsoluteLocation();
 
@@ -37,7 +41,6 @@ namespace Wortell.XamarinForms.Behaviors
       _messageView.TranslationY = parentLocation.Y - gridLocation.Y +
                                  parentElement.Height + delta?.Y ?? 0;
 
-      _messageView.Scale = 0;
       _messageView.Opacity = 1;
       ExecuteAnimation(0, 1, 250);
     }
